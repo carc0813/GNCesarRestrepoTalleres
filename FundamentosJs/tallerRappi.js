@@ -5,6 +5,10 @@ let nombreCliente = " Camila ";
 let ciudad=" Bogota ";
 //Rappi Prime o no (un valor de verdadero/falso).
 let RappiPrime= false;
+let subtotal="20000";
+let valorDelDomicilio=3500;
+let total=0;
+const propinaSugerida=0.10
 
 
 console.log(`Hola ${nombreCliente} tu pedido a domicilio en ${ciudad}`);
@@ -37,4 +41,21 @@ const pedidoCompleto={
 
 //Imprime el pedido completo
 console.log(pedidoCompleto);
-//
+//Imprime solo el nombre del cliente, accediendo a él desde el pedido.
+console.log(pedidoCompleto.nombreCliente);
+//El pedido avanza: cambia el estado a En camino e imprime el pedido de nuevo.
+pedidoCompleto.estado="En camino";
+console.log(pedidoCompleto);
+
+//Parte 4 — El cobro
+//valor del domicilio
+
+//total incorrecto
+total=subtotal +valorDelDomicilio;
+console.log("total incorrecto seria :"+ total);
+
+//total correcto
+total=Number(subtotal)+valorDelDomicilio;
+console.log("total correcto seria :"+ total);
+
+console.log(`Total a pagar por el pedido de  ${pedidoCompleto.nombreCliente} es ${total}`);
